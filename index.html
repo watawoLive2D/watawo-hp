@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="わたを｜Illustrator / Live2D Creator。かわいいを、一緒につくりたい。">
+  <title>わたを｜Illustrator / Live2D Creator</title>
+  <style>
+    :root{
+      --blue:#8fc9df; --blue-deep:#548da8; --pink:#f3b8c7;
+      --purple:#b7a9df; --ink:#27313a; --cream:#fbfaf7;
+      --white:#fff; --line:#e6e7e9;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--cream);font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.8}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .nav{position:fixed;z-index:10;top:18px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 32px));padding:12px 18px;border:1px solid rgba(255,255,255,.8);background:rgba(255,255,255,.78);backdrop-filter:blur(14px);border-radius:999px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 10px 35px rgba(70,100,120,.08)}
+    .logo{font-weight:900;letter-spacing:.08em}
+    .logo small{font-size:.65rem;display:block;font-weight:600;color:#7a858d;letter-spacing:.15em}
+    .navlinks{display:flex;gap:20px;font-size:.8rem;font-weight:700}
+    .navlinks a:hover{color:var(--blue-deep)}
+    .hero{min-height:100vh;position:relative;overflow:hidden;padding:120px 6vw 70px;display:grid;grid-template-columns:42% 58%;align-items:center;background:radial-gradient(circle at 18% 28%,#fff 0 16%,transparent 38%),linear-gradient(135deg,#f7fbfc,#fff7fa 58%,#f4f0fb)}
+    .blob{position:absolute;border-radius:50%;filter:blur(1px);opacity:.65}
+    .b1{width:280px;height:280px;background:#cfeaf3;left:-100px;bottom:5%}
+    .b2{width:230px;height:230px;background:#efd4df;right:4%;top:12%}
+    .hero-copy{position:relative;z-index:2;max-width:560px}
+    .eyebrow{font-size:.8rem;letter-spacing:.25em;color:var(--blue-deep);font-weight:800}
+    h1{font-size:clamp(3.4rem,8vw,7.5rem);line-height:.9;margin:18px 0 25px;letter-spacing:-.06em}
+    .lead{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:700;margin:0 0 28px}
+    .sub{color:#6f7880;max-width:470px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{padding:12px 22px;border-radius:999px;background:var(--ink);color:white;font-weight:800;font-size:.9rem}
+    .btn.alt{background:white;color:var(--ink);border:1px solid var(--line)}
+    .hero-art{position:relative;z-index:1;height:min(82vh,800px);display:flex;align-items:center;justify-content:center}
+    .hero-art:before{content:"";position:absolute;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(143,201,223,.18);box-shadow:0 0 0 30px rgba(243,184,199,.08)}
+    .hero-art img{position:relative;z-index:1;width:min(900px,115%);max-height:88vh;object-fit:contain;filter:drop-shadow(0 25px 30px rgba(55,75,90,.14));animation:float 5s ease-in-out infinite}
+    @keyframes float{50%{transform:translateY(-10px) rotate(1deg)}}
+    section{padding:110px 6vw}
+    .wrap{max-width:1120px;margin:auto}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:45px}
+    .section-head h2{font-size:clamp(2rem,4vw,3.5rem);margin:0;letter-spacing:-.04em}
+    .section-head p{margin:0;color:#7b858d}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border:1px solid var(--line);border-radius:26px;padding:30px;min-height:220px;box-shadow:0 15px 45px rgba(60,70,80,.05)}
+    .num{font-size:.75rem;color:var(--blue-deep);font-weight:900;letter-spacing:.2em}
+    .card h3{margin:25px 0 8px;font-size:1.35rem}
+    .works{background:#fff}
+    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .work{aspect-ratio:4/5;background:#f3f4f5;border-radius:20px;overflow:hidden;position:relative}
+    .work img{width:100%;height:100%;object-fit:cover}
+    .work .label{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.9);padding:6px 11px;border-radius:999px;font-size:.72rem;font-weight:800}
+    .placeholder{height:100%;display:grid;place-items:center;color:#8c969e;font-size:.8rem;text-align:center;padding:20px}
+    .price{background:linear-gradient(135deg,#edf8fb,#fff)}
+    .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .price-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:32px}
+    .price-card strong{font-size:2rem}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .about-box{background:white;border-radius:30px;padding:40px;border:1px solid var(--line)}
+    .contact{background:var(--ink);color:white;text-align:center}
+    .contact p{color:#cbd2d7}
+    .contact .btn{background:white;color:var(--ink);display:inline-block;margin-top:18px}
+    footer{padding:28px 6vw;background:#20272d;color:#aeb8be;font-size:.75rem;text-align:center}
+    @media(max-width:850px){
+      .nav{top:10px}.navlinks{display:none}
+      .hero{grid-template-columns:1fr;padding-top:120px;text-align:center}
+      .hero-copy{margin:auto}.buttons{justify-content:center}
+      .hero-art{height:58vh;margin-top:-30px}.hero-art img{width:115%}
+      .cards,.work-grid,.price-grid,.about{grid-template-columns:1fr}
+      section{padding:80px 5vw}
+      .section-head{display:block}.section-head p{margin-top:10px}
+      .work-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="#home">わたを<small>ILLUSTRATOR / LIVE2D CREATOR</small></a>
+    <div class="navlinks">
+      <a href="#works">WORKS</a><a href="#service">SERVICE</a><a href="#price">PRICE</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
+    </div>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="blob b1"></div><div class="blob b2"></div>
+      <div class="hero-copy">
+        <div class="eyebrow">ILLUSTRATOR / LIVE2D CREATOR</div>
+        <h1>わたを</h1>
+        <p class="lead">かわいいを、<br>一緒につくりたい。</p>
+        <p class="sub">イラスト・キャラクターデザイン・Live2Dモデル制作をしています。あなたの「こうしたい」を丁寧に形にします。</p>
+        <div class="buttons">
+          <a class="btn" href="#contact">ご依頼・お問い合わせ</a>
+          <a class="btn alt" href="#works">作品を見る</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/hero.png" alt="わたをのメインビジュアル">
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="wrap">
+        <div class="section-head"><h2>SERVICE</h2><p>できること</p></div>
+        <div class="cards">
+          <article class="card"><span class="num">01</span><h3>Illustration</h3><p>立ち絵、一枚絵、キャラクターデザインなど。かわいさを大切にしたイラストを制作します。</p></article>
+          <article class="card"><span class="num">02</span><h3>Live2D</h3><p>VTuber向けのパーツ分け・Live2Dモデリング。表情豊かで動かして楽しいモデルを制作します。</p></article>
+          <article class="card"><span class="num">03</span><h3>Design</h3><p>衣装やキャラクターの方向性、配信活動に合わせたデザインもご相談いただけます。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="works">
+      <div class="wrap">
+        <div class="section-head"><h2>WORKS</h2><p>制作実績</p></div>
+        <div class="work-grid">
+          <div class="work"><img src="assets/hero.png" alt="メイン作品"><span class="label">ILLUSTRATION</span></div>
+          <div class="work"><div class="placeholder">ここに作品画像を追加<br>（works-02.jpg など）</div><span class="label">LIVE2D</span></div>
+          <div class="work"><div class="placeholder">ここに作品画像を追加</div><span class="label">ILLUSTRATION</span></div>
+          <div class="work"><div class="placeholder">ここに作品画像を追加</div><span class="label">CHARACTER DESIGN</span></div>
+          <div class="work"><div class="placeholder">ここに作品画像を追加</div><span class="label">LIVE2D</span></div>
+          <div class="work"><div class="placeholder">ここに作品画像を追加</div><span class="label">ILLUSTRATION</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="price" class="price">
+      <div class="wrap">
+        <div class="section-head"><h2>PRICE</h2><p>料金の目安</p></div>
+        <div class="price-grid">
+          <article class="price-card"><span class="num">LIVE2D</span><h3>Live2D モデリング</h3><p><strong>¥190,000〜</strong></p><p>仕様やパーツ数、オプションによって変動します。詳細はお見積りにてご案内します。</p></article>
+          <article class="price-card"><span class="num">ILLUSTRATION</span><h3>イラスト制作</h3><p><strong>お見積り</strong></p><p>用途・サイズ・描画範囲・仕様をお伺いして、内容に合わせてお見積りします。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div><div class="eyebrow">ABOUT WATAWO</div><h2>丁寧に、<br>かわいく、楽しく。</h2><p>「こんな子を動かしたい」「この雰囲気で描いてほしい」など、イメージ段階からお気軽にご相談ください。</p></div>
+        <div class="about-box"><b>わたを</b><p>Illustrator / Live2D Creator</p><p>イラスト・Live2D・キャラクターデザインを中心に活動しています。</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <div class="eyebrow">CONTACT</div>
+        <h2>ご依頼・ご相談はこちら</h2>
+        <p>気になった方はお気軽にご連絡ください。<br>初めてのご依頼でも、ヒアリングから丁寧に対応します。</p>
+        <a class="btn" href="mailto:your-email@example.com">お問い合わせ</a>
+      </div>
+    </section>
+  </main>
+  <footer>© WATAWO</footer>
+</body>
+</html>
