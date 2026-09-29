@@ -7,9 +7,9 @@
   <title>わたを｜Illustrator / Live2D Creator</title>
   <style>
     :root{
-      --blue:#8fc9df; --blue-deep:#548da8; --pink:#f3b8c7;
-      --purple:#b7a9df; --ink:#27313a; --cream:#fbfaf7;
-      --white:#fff; --line:#e6e7e9;
+      --blue:#a9e8f7; --blue-deep:#3f9fbd; --pink:#f4b7c9;
+      --purple:#c9b9ed; --mint:#b9eee0; --ink:#285264; --cream:#f3fcff;
+      --white:#fff; --line:#d9f2f8;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -21,7 +21,7 @@
     .logo small{font-size:.65rem;display:block;font-weight:600;color:#7a858d;letter-spacing:.15em}
     .navlinks{display:flex;gap:20px;font-size:.8rem;font-weight:700}
     .navlinks a:hover{color:var(--blue-deep)}
-    .hero{min-height:100vh;position:relative;overflow:hidden;padding:120px 6vw 70px;display:grid;grid-template-columns:42% 58%;align-items:center;background:radial-gradient(circle at 18% 28%,#fff 0 16%,transparent 38%),linear-gradient(135deg,#f7fbfc,#fff7fa 58%,#f4f0fb)}
+    .hero{min-height:100vh;position:relative;overflow:hidden;padding:120px 5vw 70px;display:grid;grid-template-columns:40% 60%;align-items:center;background:linear-gradient(180deg,#e9fbff 0%,#f8feff 52%,#fff6fa 100%)}
     .blob{position:absolute;border-radius:50%;filter:blur(1px);opacity:.65}
     .b1{width:280px;height:280px;background:#cfeaf3;left:-100px;bottom:5%}
     .b2{width:230px;height:230px;background:#efd4df;right:4%;top:12%}
@@ -34,7 +34,7 @@
     .btn{padding:12px 22px;border-radius:999px;background:var(--ink);color:white;font-weight:800;font-size:.9rem}
     .btn.alt{background:white;color:var(--ink);border:1px solid var(--line)}
     .hero-art{position:relative;z-index:1;height:min(82vh,800px);display:flex;align-items:center;justify-content:center}
-    .hero-art:before{content:"";position:absolute;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(143,201,223,.18);box-shadow:0 0 0 30px rgba(243,184,199,.08)}
+    .hero-art:before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff 0 38%,rgba(190,241,250,.78) 65%,rgba(255,255,255,0) 72%);box-shadow:0 0 0 24px rgba(255,255,255,.55),0 25px 70px rgba(55,157,184,.12)}
     .hero-art img{position:relative;z-index:1;width:min(900px,115%);max-height:88vh;object-fit:contain;filter:drop-shadow(0 25px 30px rgba(55,75,90,.14));animation:float 5s ease-in-out infinite}
     @keyframes float{50%{transform:translateY(-10px) rotate(1deg)}}
     section{padding:110px 6vw}
@@ -62,11 +62,24 @@
     .contact p{color:#cbd2d7}
     .contact .btn{background:white;color:var(--ink);display:inline-block;margin-top:18px}
     footer{padding:28px 6vw;background:#20272d;color:#aeb8be;font-size:.75rem;text-align:center}
+    .hero-art{position:relative;z-index:1;height:min(84vh,820px);display:flex;align-items:center;justify-content:center}
+    .shop-sign{position:absolute;z-index:5;top:2%;left:50%;transform:translateX(-50%);min-width:310px;padding:10px 24px;border-radius:18px 18px 8px 8px;background:#fff;border:3px solid #b7eaf5;color:#4a9db7;text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;font-weight:900;letter-spacing:.12em;box-shadow:0 8px 0 #d8f5fa,0 15px 30px rgba(60,150,180,.12)}
+    .shop-sign span{display:block;font-family:Arial,sans-serif;font-size:.48rem;letter-spacing:.18em;color:#91aeb8;margin-top:2px}
+    .case{position:relative;width:min(650px,96%);height:min(650px,74vh);padding:42px 18px 25px;border-radius:28px 28px 35px 35px;background:linear-gradient(180deg,#fff 0 12%,#dff7fb 12% 15%,#bfeaf3 15% 18%,#fff 18% 100%);border:5px solid rgba(255,255,255,.96);box-shadow:0 25px 55px rgba(53,143,170,.18),inset 0 0 0 2px #bdebf5}
+    .case-awning{position:absolute;z-index:6;left:8%;right:8%;top:-24px;height:55px;display:flex;overflow:hidden;border-radius:18px 18px 7px 7px;border:4px solid #fff;box-shadow:0 10px 20px rgba(70,160,185,.13)}
+    .case-awning i{flex:1;background:#b8edf8;transform:skewX(-8deg)} .case-awning i:nth-child(even){background:#fff}
+    .case-glass{position:absolute;inset:70px 28px 90px;border:3px solid rgba(255,255,255,.95);border-radius:24px 24px 16px 16px;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(216,247,252,.48));box-shadow:inset 0 0 35px rgba(255,255,255,.8)}
+    .case-glass:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.55),transparent 35%,transparent 70%,rgba(255,255,255,.2))}
+    .case-glass img{position:absolute;z-index:2;inset:0;width:100%;height:100%;object-fit:contain;padding:2%;filter:drop-shadow(0 22px 22px rgba(48,110,130,.15));animation:float 5s ease-in-out infinite}
+    .sparkle{position:absolute;z-index:4;color:#fff;text-shadow:0 0 10px #7bd5e8;font-size:1.6rem}.sp1{left:10%;top:18%}.sp2{right:10%;top:30%}
+    .case-label{position:absolute;z-index:5;left:50%;bottom:13px;transform:translateX(-50%);white-space:nowrap;padding:5px 15px;border-radius:99px;background:rgba(255,255,255,.9);color:#4b91a7;font-size:.72rem;font-weight:900;letter-spacing:.08em}
+    .case-counter{position:absolute;left:8%;right:8%;bottom:25px;height:45px;border-radius:10px 10px 22px 22px;background:linear-gradient(#fff,#dff7fb);border:3px solid #fff;box-shadow:0 8px 20px rgba(70,160,185,.1)}
+    .case-counter span{position:absolute;bottom:8px;width:9px;height:9px;border-radius:50%;background:#9fddea}.case-counter span:nth-child(1){left:15%}.case-counter span:nth-child(2){left:50%}.case-counter span:nth-child(3){right:15%}
     @media(max-width:850px){
       .nav{top:10px}.navlinks{display:none}
       .hero{grid-template-columns:1fr;padding-top:120px;text-align:center}
       .hero-copy{margin:auto}.buttons{justify-content:center}
-      .hero-art{height:58vh;margin-top:-30px}.hero-art img{width:115%}
+      .hero-art{height:62vh;margin-top:5px}.shop-sign{min-width:240px;font-size:1rem;top:0}.case{height:56vh;min-height:390px}.case-glass{inset:62px 18px 75px}.case-awning{height:44px;top:-18px}
       .cards,.work-grid,.price-grid,.about{grid-template-columns:1fr}
       section{padding:80px 5vw}
       .section-head{display:block}.section-head p{margin-top:10px}
@@ -88,15 +101,20 @@
       <div class="hero-copy">
         <div class="eyebrow">ILLUSTRATOR / LIVE2D CREATOR</div>
         <h1>わたを</h1>
-        <p class="lead">かわいいを、<br>一緒につくりたい。</p>
-        <p class="sub">イラスト・キャラクターデザイン・Live2Dモデル制作をしています。あなたの「こうしたい」を丁寧に形にします。</p>
+        <p class="lead">ひんやり、かわいく。<br>心に残る「かわいい」を。</p>
+        <p class="sub">WATAWO ICE CREAMへようこそ。イラスト・キャラクターデザイン・Live2Dモデル制作を、アイスクリームショップのように楽しく、丁寧にお届けします。</p>
         <div class="buttons">
           <a class="btn" href="#contact">ご依頼・お問い合わせ</a>
           <a class="btn alt" href="#works">作品を見る</a>
         </div>
       </div>
       <div class="hero-art">
-        <img src="assets/hero.png" alt="わたをのメインビジュアル">
+        <div class="shop-sign">WATAWO <span>ICE CREAM &amp; CREATIVE</span></div>
+        <div class="case">
+          <div class="case-awning"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="case-glass"><span class="sparkle sp1">✦</span><span class="sparkle sp2">✧</span><img src="assets/hero.png" alt="わたをのメインビジュアル"><div class="case-label">かわいいを、ひとくち。</div></div>
+          <div class="case-counter"><span></span><span></span><span></span></div>
+        </div>
       </div>
     </section>
 
