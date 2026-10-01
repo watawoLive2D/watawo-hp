@@ -33,6 +33,11 @@
     .lead{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:700;margin:0 0 28px}
     .sub{color:#6f7880;max-width:470px}
     .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .hero-links{display:flex;align-items:center;gap:10px;margin-top:15px;font-size:.68rem;color:#7a858d}
+    .hero-links a{padding:3px 7px;border-radius:999px;color:#6b8d99;transition:.2s}
+    .hero-links a:hover{background:#fff;color:var(--blue-deep);box-shadow:0 5px 14px rgba(65,145,165,.08)}
+    .hero-links span{opacity:.45}
+    @media(max-width:850px){.hero-links{justify-content:center;flex-wrap:wrap}}
     .btn{padding:12px 22px;border-radius:999px;background:var(--ink);color:white;font-weight:800;font-size:.9rem}
     .btn.alt{background:white;color:var(--ink);border:1px solid var(--line)}
     .hero-art{position:relative;z-index:1;height:min(82vh,800px);display:flex;align-items:center;justify-content:center}
@@ -145,7 +150,7 @@
   <nav class="nav">
     <a class="logo" href="#home">わたを<small>ILLUSTRATOR / LIVE2D CREATOR</small><span class="logo-bubble" id="logoBubble"></span></a>
     <div class="navlinks">
-      <a href="#status">STATUS</a><a href="#works">WORKS</a><a href="#links">LINK</a><a href="#price">PRICE</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
+      <a href="#status">STATUS</a><a href="#works">WORKS</a><a href="#price">PRICE</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
     </div>
   </nav>
 
@@ -160,6 +165,14 @@
         <div class="buttons">
           <a class="btn" href="#contact">ご依頼・お問い合わせ</a>
           <a class="btn alt" href="#works">作品を見る</a>
+        </div>
+        <div class="hero-links">
+          <a href="https://x.com/watawo_2026" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://www.youtube.com/@watawo-%E3%82%8F%E3%81%9F%E3%82%92" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://watawo.fanbox.cc/" target="_blank" rel="noopener noreferrer">FANBOX</a>
+          <span>｜</span>
+          <a href="https://tsunagu.cloud/users/formplsu" target="_blank" rel="noopener noreferrer">つなぐ</a>
+          <a href="https://nizima.com/Profile/590013" target="_blank" rel="noopener noreferrer">nizima</a>
         </div>
       </div>
       <div class="hero-art">
@@ -234,28 +247,6 @@
           <article class="live2d-work" data-gallery="assets/ねり.png"><img src="assets/ねり.png" alt="ねり"></article>
           <article class="live2d-work" data-gallery="assets/わたを.png"><img src="assets/わたを.png" alt="わたを"></article>
           <article class="live2d-work" data-gallery="assets/ししゅうちゃん.png"><img src="assets/ししゅうちゃん.png" alt="ししゅうちゃん"></article>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="links" class="links">
-      <div class="wrap">
-        <div class="section-head"><h2>LINK</h2></div>
-        <div class="link-showcase">
-          <div class="link-category">SNS</div>
-          <div class="link-list">
-            <a class="link-button" href="https://x.com/watawo_2026" target="_blank" rel="noopener noreferrer"><span>X（Twitter）</span><span class="link-arrow">↗</span></a>
-            <a class="link-button" href="https://www.youtube.com/@watawo-%E3%82%8F%E3%81%9F%E3%82%92" target="_blank" rel="noopener noreferrer"><span>YouTube</span><span class="link-arrow">↗</span></a>
-          
-            <a class="link-button" href="https://watawo.fanbox.cc/" target="_blank" rel="noopener noreferrer"><span>FANBOX</span><span class="link-arrow">↗</span></a>
-          </div>
-
-          <div class="link-category">ご依頼サイト</div>
-          <div class="link-list">
-            <a class="link-button" href="https://tsunagu.cloud/users/formplsu" target="_blank" rel="noopener noreferrer"><span>つなぐ</span><span class="link-arrow">↗</span></a>
-            <a class="link-button" href="https://nizima.com/Profile/590013" target="_blank" rel="noopener noreferrer"><span>nizima</span><span class="link-arrow">↗</span></a>
-          </div>
         </div>
       </div>
     </section>
