@@ -61,6 +61,8 @@
     .placeholder{height:100%;display:grid;place-items:center;color:#8c969e;font-size:.8rem;text-align:center;padding:20px}
     .price{background:linear-gradient(135deg,#edf8fb,#fff)}
     .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .price-inline{margin-top:34px;padding-top:28px;border-top:2px solid #d4f1f7}
+    .price-inline-title{text-align:center;color:#4d93a8;font-weight:900;letter-spacing:.12em;margin-bottom:18px;font-size:1rem}
     .price-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:24px}
     .price-card h3{font-size:1rem;margin:14px 0 8px}
     .price-card p{font-size:.72rem;margin:7px 0;white-space:nowrap}
@@ -71,7 +73,7 @@
     .price-row strong{white-space:nowrap;text-align:left}
     .price-divider{height:1px;background:var(--line);margin:13px 0}
     .price-card hr{border:0;border-top:1px solid var(--line);margin:12px 0}
-    @media(max-width:850px){.price-card p{white-space:normal}.price-row{grid-template-columns:1fr auto}.price-row span{white-space:normal}}
+    @media(max-width:850px){.price-card p{white-space:normal}.price-row{grid-template-columns:1fr auto}.price-row span{white-space:normal}.price-grid{grid-template-columns:1fr}}
     .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
     .about-box{background:white;border-radius:30px;padding:40px;border:1px solid var(--line)}
     .contact{background:var(--ink);color:white;text-align:center}
@@ -184,60 +186,52 @@
 
     <section id="status" class="status">
       <div class="wrap">
-        <div class="section-head"><h2>STATUS</h2></div>
+        <div class="section-head"><h2>PRICE</h2></div>
         <div class="status-showcase">
           <div class="status-sign">受付状況<small>LIVE2D COMMISSION</small></div>
           <div class="status-scoops">
             <article class="status-card closed" data-note="リピーター様・お急ぎの方はご相談ください。">
-              <div class="month">10月</div>
-              <div class="status-scoop">×</div>
-              <div class="status-text">受付終了</div>
+              <div class="month">10月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
             </article>
             <article class="status-card closed" data-note="リピーター様・お急ぎの方はご相談ください。">
-              <div class="month">11月</div>
-              <div class="status-scoop">×</div>
-              <div class="status-text">受付終了</div>
+              <div class="month">11月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
             </article>
             <article class="status-card adjust" data-note="現在お見積り中のお客様がいます。状況によっては受付可能ですので、後日確認に来てください。">
-              <div class="month">12月</div>
-              <div class="status-scoop">△</div>
-              <div class="status-text">調整中</div>
+              <div class="month">12月</div><div class="status-scoop">△</div><div class="status-text">調整中</div>
             </article>
             <article class="status-card open" data-note="着手可能です。お気軽にご相談ください。">
-              <div class="month">1月</div>
-              <div class="status-scoop">○</div>
-              <div class="status-text">受付可能</div>
+              <div class="month">1月</div><div class="status-scoop">○</div><div class="status-text">受付可能</div>
             </article>
           </div>
           <p class="status-note">受付状況はスケジュールにより変動する場合があります。ご依頼を検討中の方はお気軽にご相談ください。</p>
+
+          <div class="price-inline">
+            <div class="price-inline-title">料金の目安</div>
+            <div class="price-grid">
+              <article class="price-card"><span class="num">LIVE2D</span><h3>分割払いOK！</h3>
+                <div class="price-list">
+                  <div class="price-row"><span>上半身モデル一括制作</span><strong>¥160,000〜</strong></div>
+                  <div class="price-row"><span>全身モデル一括制作</span><strong>¥190,000〜</strong></div>
+                </div>
+                <p>※価格は税抜きです。<br>一括制作の場合は料金がお安くなります。</p>
+                <div class="price-divider"></div>
+                <div class="price-list">
+                  <div class="price-row"><span>Live2Dパーツ分けイラストのみ</span><strong>¥130,000〜</strong></div>
+                  <div class="price-row"><span>Live2Dモデリングのみ</span><strong>¥130,000〜</strong></div>
+                </div>
+              </article>
+              <article class="price-card"><span class="num">ILLUSTRATION</span><h3>全身イラスト</h3>
+                <div class="price-list">
+                  <div class="price-row"><span>リテイクなし・おまかせ</span><strong>¥15,000</strong></div>
+                  <div class="price-row"><span>リテイクあり</span><strong>¥20,000</strong></div>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section id="price" class="price">
-      <div class="wrap">
-        <div class="section-head"><h2>PRICE</h2></div>
-        <div class="price-grid">
-          <article class="price-card"><span class="num">LIVE2D</span><h3>分割払いOK！</h3>
-            <div class="price-list">
-              <div class="price-row"><span>上半身モデル一括制作</span><strong>¥160,000〜</strong></div>
-              <div class="price-row"><span>全身モデル一括制作</span><strong>¥190,000〜</strong></div>
-            </div>
-            <p>※価格は税抜きです。<br>一括制作の場合は料金がお安くなります。</p>
-            <div class="price-divider"></div>
-            <div class="price-list">
-              <div class="price-row"><span>Live2Dパーツ分けイラストのみ</span><strong>¥130,000〜</strong></div>
-              <div class="price-row"><span>Live2Dモデリングのみ</span><strong>¥130,000〜</strong></div>
-            </div>
-          </article>
-          <article class="price-card"><span class="num">ILLUSTRATION</span><h3>全身イラスト</h3>
-            <div class="price-list">
-              <div class="price-row"><span>リテイクなし・おまかせ</span><strong>¥15,000</strong></div>
-              <div class="price-row"><span>リテイクあり</span><strong>¥20,000</strong></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+
     <section id="works" class="works">
       <div class="wrap">
         <div class="section-head"><h2>WORKS</h2></div>
