@@ -64,9 +64,15 @@
     footer{padding:28px 6vw;background:#20272d;color:#aeb8be;font-size:.75rem;text-align:center}
 
     .live2d-work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .live2d-work{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 15px 40px rgba(60,70,80,.06)}
+    .live2d-work{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 15px 40px rgba(60,70,80,.06);cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .live2d-work:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(60,70,80,.12)}
     .live2d-work img{width:100%;aspect-ratio:1/1;object-fit:cover}
-    .live2d-work .work-info{padding:16px 18px;font-weight:800;color:#3f6e80}
+    .live2d-work .work-info{display:none}
+    .lightbox{position:fixed;z-index:100;inset:0;background:rgba(20,25,30,.86);display:none;align-items:center;justify-content:center;padding:30px}
+    .lightbox.is-open{display:flex}
+    .lightbox img{max-width:min(92vw,1100px);max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 25px 80px rgba(0,0,0,.35)}
+    .lightbox-close{position:absolute;right:22px;top:16px;width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:#27313a;font-size:28px;line-height:1;cursor:pointer}
+    .lightbox-hint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);color:#fff;font-size:.75rem;opacity:.8;white-space:nowrap}
     @media(max-width:850px){.live2d-work-grid{grid-template-columns:1fr}}
     @media(max-width:850px){
       .nav{top:10px}.navlinks{display:none}
@@ -122,10 +128,10 @@
         <div class="section-head"><h2>WORKS</h2><p>制作実績</p></div>
         <h3 style="color:#3f6e80;margin:0 0 18px">Live2D</h3>
         <div class="live2d-work-grid">
-          <article class="live2d-work"><img src="assets/live2d-01.jpg" alt="Live2D制作実績 1"><div class="work-info">Live2D Model 01</div></article>
-          <article class="live2d-work"><img src="assets/live2d-02.jpg" alt="Live2D制作実績 2"><div class="work-info">Live2D Model 02</div></article>
-          <article class="live2d-work"><img src="assets/live2d-03.jpg" alt="Live2D制作実績 3"><div class="work-info">Live2D Model 03</div></article>
-          <article class="live2d-work"><img src="assets/live2d-04.jpg" alt="Live2D制作実績 4"><div class="work-info">Live2D Model 04</div></article>
+          <article class="live2d-work" data-gallery="assets/live2d-01.jpg"><img src="assets/live2d-01.jpg" alt="Live2D制作実績 1"></article>
+          <article class="live2d-work" data-gallery="assets/live2d-02.jpg"><img src="assets/live2d-02.jpg" alt="Live2D制作実績 2"></article>
+          <article class="live2d-work" data-gallery="assets/live2d-03.jpg"><img src="assets/live2d-03.jpg" alt="Live2D制作実績 3"></article>
+          <article class="live2d-work" data-gallery="assets/live2d-04.jpg"><img src="assets/live2d-04.jpg" alt="Live2D制作実績 4"></article>
         </div>
         <div style="height:42px"></div>
         <div class="work-grid">
@@ -161,6 +167,42 @@
       </div>
     </section>
   </main>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="作品拡大表示">
+    <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">×</button>
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-hint">画像をクリックすると閉じます</div>
+  </div>
+
   <footer>© WATAWO</footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.live2d-work').forEach(card => {
+      card.addEventListener('click', () => {
+        const image = card.querySelector('img');
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+      lightboxImage.src = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox || e.target === lightboxImage) closeLightbox();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
