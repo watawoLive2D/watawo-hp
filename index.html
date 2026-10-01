@@ -32,7 +32,8 @@
     .eyebrow{font-size:.8rem;letter-spacing:.25em;color:var(--blue-deep);font-weight:800}
     h1{font-size:clamp(3.4rem,8vw,7.5rem);line-height:.9;margin:18px 0 25px;letter-spacing:-.06em}
     .lead{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:700;margin:0 0 28px}
-    .sub{color:#6f7880;max-width:470px}
+    .sub{color:#6f7880;max-width:none;white-space:nowrap}
+    @media(max-width:850px){.sub{white-space:normal}}
     .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
     .hero-links{display:flex;align-items:center;gap:10px;margin-top:15px;font-size:.68rem;color:#7a858d}
     .hero-links a{padding:3px 7px;border-radius:999px;color:#6b8d99;transition:.2s}
