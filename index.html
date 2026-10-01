@@ -63,6 +63,21 @@
     .contact .btn{background:white;color:var(--ink);display:inline-block;margin-top:18px}
     footer{padding:28px 6vw;background:#20272d;color:#aeb8be;font-size:.75rem;text-align:center}
 
+
+    .links{background:linear-gradient(180deg,#f7fdff 0%,#eefaff 100%)}
+    .link-showcase{max-width:820px;margin:auto;background:rgba(255,255,255,.82);border:3px solid #fff;border-radius:34px;padding:34px;box-shadow:0 22px 55px rgba(67,155,180,.12),inset 0 0 0 1px #d4f1f7}
+    .link-sign{width:max-content;max-width:100%;margin:0 auto 28px;padding:13px 30px;background:#fff;border:3px solid #bfeaf4;border-radius:18px;box-shadow:0 7px 0 #d9f5fa;color:#4d9eb7;text-align:center;font-weight:900;letter-spacing:.14em}
+    .link-sign small{display:block;margin-top:3px;font-size:.62rem;letter-spacing:.18em;color:#8caab4}
+    .link-category{margin:28px 0 12px;color:#4d93a8;font-size:1rem;font-weight:900;letter-spacing:.08em}
+    .link-category:first-of-type{margin-top:0}
+    .link-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .link-button{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border-radius:18px;background:#fff;border:2px solid #d8f3f8;color:#416f7e;font-weight:800;transition:.2s;box-shadow:0 7px 18px rgba(65,145,165,.06)}
+    .link-button:hover{transform:translateY(-3px);border-color:#a9dfeb;box-shadow:0 12px 25px rgba(65,145,165,.12);color:#3f9fbd}
+    .link-arrow{font-size:1.1rem;color:#7db8c7}
+    .link-disabled{opacity:.55;cursor:default}
+    .link-disabled:hover{transform:none;color:#416f7e;border-color:#d8f3f8;box-shadow:0 7px 18px rgba(65,145,165,.06)}
+    @media(max-width:850px){.link-showcase{padding:26px 18px}.link-list{grid-template-columns:1fr}}
+
     .live2d-work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .live2d-work{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 15px 40px rgba(60,70,80,.06);cursor:pointer;transition:transform .2s,box-shadow .2s}
     .live2d-work:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(60,70,80,.12)}
@@ -118,7 +133,7 @@
   <nav class="nav">
     <a class="logo" href="#home">わたを<small>ILLUSTRATOR / LIVE2D CREATOR</small></a>
     <div class="navlinks">
-      <a href="#status">STATUS</a><a href="#works">WORKS</a><a href="#service">SERVICE</a><a href="#price">PRICE</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
+      <a href="#status">STATUS</a><a href="#works">WORKS</a><a href="#service">SERVICE</a><a href="#links">LINK</a><a href="#price">PRICE</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
     </div>
   </nav>
 
@@ -196,6 +211,36 @@
       </div>
     </section>
 
+
+    <section id="links" class="links">
+      <div class="wrap">
+        <div class="section-head"><h2>LINK</h2><p>わたをのリンクまとめ</p></div>
+        <div class="link-showcase">
+          <div class="link-sign">WATAWO LINK<small>ICE CREAM &amp; CREATIVE</small></div>
+
+          <div class="link-category">SNS</div>
+          <div class="link-list">
+            <a class="link-button" href="https://x.com/watawo_2026" target="_blank" rel="noopener noreferrer"><span>X（Twitter）</span><span class="link-arrow">↗</span></a>
+            <a class="link-button" href="https://www.youtube.com/@watawo-%E3%82%8F%E3%81%9F%E3%82%92" target="_blank" rel="noopener noreferrer"><span>YouTube</span><span class="link-arrow">↗</span></a>
+          </div>
+
+          <div class="link-category">活動・コミュニティ</div>
+          <div class="link-list">
+            <a class="link-button" href="https://watawo.fanbox.cc/" target="_blank" rel="noopener noreferrer"><span>FANBOX</span><span class="link-arrow">↗</span></a>
+            <span class="link-button link-disabled"><span>BOOTH</span><small>準備中</small></span>
+            <span class="link-button link-disabled"><span>Discord</span><small>準備中</small></span>
+          </div>
+
+          <div class="link-category">ご依頼</div>
+          <div class="link-list">
+            <span class="link-button link-disabled"><span>ココナラ</span><small>準備中</small></span>
+            <a class="link-button" href="https://tsunagu.cloud/users/formplsu" target="_blank" rel="noopener noreferrer"><span>つなぐ</span><span class="link-arrow">↗</span></a>
+            <span class="link-button link-disabled"><span>VGen</span><small>準備中</small></span>
+            <a class="link-button" href="https://nizima.com/Profile/590013" target="_blank" rel="noopener noreferrer"><span>nizima</span><span class="link-arrow">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="price" class="price">
       <div class="wrap">
         <div class="section-head"><h2>PRICE</h2><p>料金の目安</p></div>
