@@ -109,6 +109,9 @@
     .lightbox.is-open{display:flex}
     .lightbox img{max-width:min(92vw,1100px);max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 25px 80px rgba(0,0,0,.35)}
     .lightbox-close{position:absolute;right:22px;top:16px;width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:#27313a;font-size:28px;line-height:1;cursor:pointer}
+    .lightbox-caption{position:absolute;left:50%;bottom:48px;transform:translateX(-50%);color:#fff;font-size:1rem;font-weight:800;white-space:nowrap;text-align:center;text-shadow:0 2px 8px rgba(0,0,0,.45)}
+    .lightbox-caption a{color:#fff;text-decoration:none;margin-left:3px}
+    .lightbox-caption a:hover{text-decoration:underline}
     .lightbox-hint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);color:#fff;font-size:.75rem;opacity:.8;white-space:nowrap}
 
     .status{background:linear-gradient(180deg,#e9faff 0%,#f7fdff 100%);position:relative;overflow:hidden}
@@ -245,6 +248,7 @@
           <article class="live2d-work" data-gallery="assets/ねり.png"><img src="assets/ねり.png" alt="ねり"></article>
           <article class="live2d-work" data-gallery="assets/わたを.png"><img src="assets/わたを.png" alt="わたを"></article>
           <article class="live2d-work" data-gallery="assets/ししゅうちゃん.png"><img src="assets/ししゅうちゃん.png" alt="ししゅうちゃん"></article>
+          <article class="live2d-work" data-gallery="assets/みやせさま.png" data-title="白群みやせ"><img src="assets/みやせさま.png" alt="白群みやせ"></article>
         </div>
       </div>
     </section>
@@ -272,6 +276,7 @@
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="作品拡大表示">
     <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">×</button>
     <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
     <div class="lightbox-hint">画像をクリックすると閉じます</div>
   </div>
 
@@ -298,12 +303,17 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxCaption = document.getElementById('lightboxCaption');
 
     document.querySelectorAll('.live2d-work').forEach(card => {
       card.addEventListener('click', () => {
         const image = card.querySelector('img');
         lightboxImage.src = image.src;
         lightboxImage.alt = image.alt;
+        const title = card.dataset.title;
+        lightboxCaption.innerHTML = title
+          ? `<span>白群みやせ</span> <a href="https://abs.twimg.com/emoji/v2/svg/1f408-200d-2b1b.svg" target="_blank" rel="noopener noreferrer">🐈‍⬛</a><a href="https://abs.twimg.com/emoji/v2/svg/26d3.svg" target="_blank" rel="noopener noreferrer">⛓️</a><a href="https://abs.twimg.com/emoji/v2/svg/1f98b.svg" target="_blank" rel="noopener noreferrer">🦋</a> <span>さま</span>`
+          : '';
         lightbox.classList.add('is-open');
         document.body.style.overflow = 'hidden';
       });
@@ -313,6 +323,7 @@
       lightbox.classList.remove('is-open');
       document.body.style.overflow = '';
       lightboxImage.src = '';
+      lightboxCaption.innerHTML = '';
     }
 
     lightboxClose.addEventListener('click', closeLightbox);
