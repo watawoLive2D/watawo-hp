@@ -56,8 +56,12 @@
     .placeholder{height:100%;display:grid;place-items:center;color:#8c969e;font-size:.8rem;text-align:center;padding:20px}
     .price{background:linear-gradient(135deg,#edf8fb,#fff)}
     .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .price-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:32px}
-    .price-card strong{font-size:2rem}
+    .price-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:24px}
+    .price-card h3{font-size:1rem;margin:14px 0 8px}
+    .price-card p{font-size:.72rem;margin:7px 0;white-space:nowrap}
+    .price-card strong{font-size:.82rem}
+    .price-card hr{border:0;border-top:1px solid var(--line);margin:12px 0}
+    @media(max-width:850px){.price-card p{white-space:normal}}
     .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
     .about-box{background:white;border-radius:30px;padding:40px;border:1px solid var(--line)}
     .contact{background:var(--ink);color:white;text-align:center}
