@@ -7,9 +7,9 @@
   <title>わたを｜Illustrator / Live2D Creator</title>
   <style>
     :root{
-      --blue:#8fc9df; --blue-deep:#548da8; --pink:#f3b8c7;
-      --purple:#b7a9df; --ink:#27313a; --cream:#fbfaf7;
-      --white:#fff; --line:#e6e7e9;
+      --blue:#a8c9dc; --blue-deep:#2e455a; --pink:#f4f1df;
+      --purple:#d8e4e9; --ink:#2e455a; --cream:#dcecf3;
+      --white:#fffdf3; --line:#c8dbe4;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -24,10 +24,10 @@
     .logo small{font-size:.65rem;display:block;font-weight:600;color:#7a858d;letter-spacing:.15em}
     .navlinks{display:flex;gap:20px;font-size:.8rem;font-weight:700}
     .navlinks a:hover{color:var(--blue-deep)}
-    .hero{min-height:100vh;position:relative;overflow:hidden;padding:120px 6vw 70px;display:grid;grid-template-columns:42% 58%;align-items:center;background:radial-gradient(circle at 18% 28%,#fff 0 16%,transparent 38%),linear-gradient(135deg,#f7fbfc,#fff7fa 58%,#f4f0fb)}
+    .hero{min-height:100vh;position:relative;overflow:hidden;padding:120px 6vw 70px;display:grid;grid-template-columns:42% 58%;align-items:center;background:radial-gradient(circle at 18% 28%,#fffdf3 0 16%,transparent 38%),linear-gradient(135deg,#dcecf3,#e9f3f5 58%,#f4f1df)}
     .blob{position:absolute;border-radius:50%;filter:blur(1px);opacity:.65}
-    .b1{width:280px;height:280px;background:#cfeaf3;left:-100px;bottom:5%}
-    .b2{width:230px;height:230px;background:#efd4df;right:4%;top:12%}
+    .b1{width:280px;height:280px;background:#b7d6e5;left:-100px;bottom:5%}
+    .b2{width:230px;height:230px;background:#f1edda;right:4%;top:12%}
     .hero-copy{position:relative;z-index:2;max-width:560px}
     .eyebrow{font-size:.8rem;letter-spacing:.25em;color:var(--blue-deep);font-weight:800}
     h1{font-size:clamp(3.4rem,8vw,7.5rem);line-height:.9;margin:18px 0 25px;letter-spacing:-.06em}
@@ -42,7 +42,7 @@
     .btn{padding:12px 22px;border-radius:999px;background:var(--ink);color:white;font-weight:800;font-size:.9rem}
     .btn.alt{background:white;color:var(--ink);border:1px solid var(--line)}
     .hero-art{position:relative;z-index:1;height:min(82vh,800px);display:flex;align-items:center;justify-content:center}
-    .hero-art:before{content:"";position:absolute;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(143,201,223,.18);box-shadow:0 0 0 30px rgba(243,184,199,.08)}
+    .hero-art:before{content:"";position:absolute;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(168,201,220,.24);box-shadow:0 0 0 30px rgba(244,241,223,.55)}
     .hero-art{position:relative;z-index:1}.hero-art img{position:relative;z-index:1;cursor:help;width:min(900px,115%);max-height:88vh;object-fit:contain;filter:drop-shadow(0 25px 30px rgba(55,75,90,.14));animation:float 5s ease-in-out infinite}
     @keyframes float{50%{transform:translateY(-10px) rotate(1deg)}}
     section{padding:110px 6vw}
@@ -54,13 +54,13 @@
     .card{background:white;border:1px solid var(--line);border-radius:26px;padding:30px;min-height:220px;box-shadow:0 15px 45px rgba(60,70,80,.05)}
     .num{font-size:.75rem;color:var(--blue-deep);font-weight:900;letter-spacing:.2em}
     .card h3{margin:25px 0 8px;font-size:1.35rem}
-    .works{background:#fff}
+    .works{background:#e9f3f5}
     .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .work{aspect-ratio:4/5;background:#f3f4f5;border-radius:20px;overflow:hidden;position:relative}
     .work img{width:100%;height:100%;object-fit:cover}
     .work .label{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.9);padding:6px 11px;border-radius:999px;font-size:.72rem;font-weight:800}
     .placeholder{height:100%;display:grid;place-items:center;color:#8c969e;font-size:.8rem;text-align:center;padding:20px}
-    .price{background:linear-gradient(135deg,#edf8fb,#fff)}
+    .price{background:linear-gradient(135deg,#dcecf3,#f4f1df)}
     .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .price-inline{margin-top:34px;padding-top:28px;border-top:2px solid #d4f1f7}
     .price-inline-title{text-align:center;color:#4d93a8;font-weight:900;letter-spacing:.12em;margin-bottom:18px;font-size:1rem}
@@ -79,10 +79,10 @@
     .about-box{background:white;border-radius:30px;padding:40px;border:1px solid var(--line)}
     .contact-method{margin-top:18px;font-weight:700}
     .contact-links{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .contact{background:var(--ink);color:white;text-align:center}
+    .contact{background:#2e455a;color:#fffdf3;text-align:center}
     .contact p{color:#cbd2d7}
     .contact .btn{background:white;color:var(--ink);display:inline-block;margin-top:18px}
-    footer{padding:28px 6vw;background:#20272d;color:#aeb8be;font-size:.75rem;text-align:center}
+    footer{padding:28px 6vw;background:#243746;color:#d8e4e9;font-size:.75rem;text-align:center}
 
 
     .links{background:linear-gradient(180deg,#f7fdff 0%,#eefaff 100%)}
