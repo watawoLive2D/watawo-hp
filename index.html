@@ -245,9 +245,9 @@
         <h3 style="color:#3f6e80;margin:0 0 18px">Live2D</h3>
         <div class="live2d-work-grid">
           <article class="live2d-work" data-gallery="assets/はろうぃんちゃん1.png"><img src="assets/はろうぃんちゃん1.png" alt="はろうぃんちゃん"></article>
-          <article class="live2d-work" data-gallery="assets/ねり.png"><img src="assets/ねり.png" alt="ねり"></article>
-          <article class="live2d-work" data-gallery="assets/わたを.png"><img src="assets/わたを.png" alt="わたを"></article>
-          <article class="live2d-work" data-gallery="assets/ししゅうちゃん.png"><img src="assets/ししゅうちゃん.png" alt="ししゅうちゃん"></article>
+          <article class="live2d-work" data-gallery="assets/ねり.png" data-title="ねり"><img src="assets/ねり.png" alt="ねり"></article>
+          <article class="live2d-work" data-gallery="assets/わたを.png" data-title="わたを"><img src="assets/わたを.png" alt="わたを"></article>
+          <article class="live2d-work" data-gallery="assets/ししゅうちゃん.png" data-title="魂募集中"><img src="assets/ししゅうちゃん.png" alt="ししゅうちゃん"></article>
           <article class="live2d-work" data-gallery="assets/みやせさま.png" data-title="白群みやせ"><img src="assets/みやせさま.png" alt="白群みやせ"></article>
         </div>
       </div>
@@ -311,9 +311,9 @@
         lightboxImage.src = image.src;
         lightboxImage.alt = image.alt;
         const title = card.dataset.title;
-        lightboxCaption.innerHTML = title
+        lightboxCaption.innerHTML = title === '白群みやせ'
           ? `<span>白群みやせ</span> <a href="https://abs.twimg.com/emoji/v2/svg/1f408-200d-2b1b.svg" target="_blank" rel="noopener noreferrer">🐈‍⬛</a><a href="https://abs.twimg.com/emoji/v2/svg/26d3.svg" target="_blank" rel="noopener noreferrer">⛓️</a><a href="https://abs.twimg.com/emoji/v2/svg/1f98b.svg" target="_blank" rel="noopener noreferrer">🦋</a> <span>さま</span>`
-          : '';
+          : title ? `<span>${title}</span>` : '';
         lightbox.classList.add('is-open');
         document.body.style.overflow = 'hidden';
       });
