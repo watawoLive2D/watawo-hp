@@ -60,8 +60,13 @@
     .price-card h3{font-size:1rem;margin:14px 0 8px}
     .price-card p{font-size:.72rem;margin:7px 0;white-space:nowrap}
     .price-card strong{font-size:.82rem}
+    .price-list{display:flex;flex-direction:column;gap:7px;margin:10px 0}
+    .price-row{display:grid;grid-template-columns:minmax(0,1fr) 125px;align-items:center;gap:14px;font-size:.72rem}
+    .price-row span{white-space:nowrap}
+    .price-row strong{white-space:nowrap;text-align:left}
+    .price-divider{height:1px;background:var(--line);margin:13px 0}
     .price-card hr{border:0;border-top:1px solid var(--line);margin:12px 0}
-    @media(max-width:850px){.price-card p{white-space:normal}}
+    @media(max-width:850px){.price-card p{white-space:normal}.price-row{grid-template-columns:1fr auto}.price-row span{white-space:normal}}
     .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
     .about-box{background:white;border-radius:30px;padding:40px;border:1px solid var(--line)}
     .contact{background:var(--ink);color:white;text-align:center}
@@ -200,13 +205,22 @@
         <div class="section-head"><h2>PRICE</h2></div>
         <div class="price-grid">
           <article class="price-card"><span class="num">LIVE2D</span><h3>分割払いOK！</h3>
-            <p><strong>上半身モデル一括制作　¥160,000〜</strong><br><strong>全身モデル一括制作　¥190,000〜</strong></p>
+            <div class="price-list">
+              <div class="price-row"><span>上半身モデル一括制作</span><strong>¥160,000〜</strong></div>
+              <div class="price-row"><span>全身モデル一括制作</span><strong>¥190,000〜</strong></div>
+            </div>
             <p>※価格は税抜きです。<br>一括制作の場合は料金がお安くなります。</p>
-            <hr>
-            <p><strong>Live2Dパーツ分けイラストのみ　¥130,000〜</strong><br><strong>Live2Dモデリングのみ　¥130,000〜</strong></p>
+            <div class="price-divider"></div>
+            <div class="price-list">
+              <div class="price-row"><span>Live2Dパーツ分けイラストのみ</span><strong>¥130,000〜</strong></div>
+              <div class="price-row"><span>Live2Dモデリングのみ</span><strong>¥130,000〜</strong></div>
+            </div>
           </article>
           <article class="price-card"><span class="num">ILLUSTRATION</span><h3>全身イラスト</h3>
-            <p><strong>リテイクなし・おまかせ　¥15,000</strong><br><strong>リテイクあり　¥20,000</strong></p>
+            <div class="price-list">
+              <div class="price-row"><span>リテイクなし・おまかせ</span><strong>¥15,000</strong></div>
+              <div class="price-row"><span>リテイクあり</span><strong>¥20,000</strong></div>
+            </div>
           </article>
         </div>
       </div>
