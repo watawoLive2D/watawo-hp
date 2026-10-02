@@ -120,7 +120,7 @@
     .status-showcase{margin-top:20px;background:rgba(255,255,255,.78);border:4px solid #fff;border-radius:34px;padding:42px 34px 30px;box-shadow:0 22px 55px rgba(67,155,180,.14),inset 0 0 0 1px #cceff6}
     .status-sign{width:max-content;max-width:100%;margin:0 auto 38px;padding:13px 34px;background:#fff;border:3px solid #bfeaf4;border-radius:18px;box-shadow:0 7px 0 #d9f5fa;color:#4d9eb7;text-align:center;font-weight:900;letter-spacing:.14em}
     .status-sign small{display:block;margin-top:3px;font-size:.62rem;letter-spacing:.18em;color:#8caab4}
-    .status-scoops{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:end;width:66%;margin:0 auto}
+    .status-scoops{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:end;width:100%;margin:0 auto}
     .status-card{position:relative;cursor:help;min-height:180px;padding:12px 8px 10px;border-radius:20px 20px 14px 14px;background:linear-gradient(180deg,#fff,#f5fcff);border:2px solid #fff;box-shadow:0 8px 18px rgba(60,140,165,.10);text-align:center}
     .status-card:before{content:"";position:absolute;left:8%;right:8%;top:0;height:10px;border-radius:0 0 10px 10px;background:#b9eaf4}
     .status-card.closed:before{background:#f3b9c9}
@@ -197,17 +197,41 @@
         <div class="status-showcase">
           <div class="status-sign">受付状況<small>LIVE2D COMMISSION</small></div>
           <div class="status-scoops">
-            <article class="status-card closed" data-note="リピーター様・お急ぎの方はご相談ください。">
-              <div class="month">10月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
+            <article class="status-card closed" data-note="現在は受付を終了しています。">
+              <div class="month">1月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
             </article>
-            <article class="status-card closed" data-note="リピーター様・お急ぎの方はご相談ください。">
-              <div class="month">11月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
+            <article class="status-card adjust" data-note="現在お見積り・スケジュールを調整中です。">
+              <div class="month">2月</div><div class="status-scoop">△</div><div class="status-text">調整中</div>
             </article>
-            <article class="status-card adjust" data-note="現在お見積り中のお客様がいます。ご相談内容によって受付可能です">
-              <div class="month">12月</div><div class="status-scoop">△</div><div class="status-text">調整中</div>
+            <article class="status-card adjust" data-note="現在お見積り・スケジュールを調整中です。">
+              <div class="month">3月</div><div class="status-scoop">△</div><div class="status-text">調整中</div>
             </article>
-            <article class="status-card adjust" data-note="現在お見積り中のお客様がいます。ご相談内容によって受付可能です">
-              <div class="month">1月</div><div class="status-scoop">△</div><div class="status-text">調整中</div>
+            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
+              <div class="month">4月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
+            </article>
+            <article class="status-card adjust" data-note="現在お見積り・スケジュールを調整中です。">
+              <div class="month">5月</div><div class="status-scoop">△</div><div class="status-text">調整中</div>
+            </article>
+            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
+              <div class="month">6月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
+            </article>
+            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
+              <div class="month">7月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
+            </article>
+            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
+              <div class="month">8月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
+            </article>
+            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
+              <div class="month">9月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
+            </article>
+            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
+              <div class="month">10月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
+            </article>
+            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
+              <div class="month">11月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
+            </article>
+            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
+              <div class="month">12月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
             </article>
           </div>
           <p class="status-note">受付状況はスケジュールにより変動する場合があります。ご依頼を検討中の方はお気軽にご相談ください。</p>
