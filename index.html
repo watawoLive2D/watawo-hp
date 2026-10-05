@@ -137,6 +137,20 @@
     .adjust .status-text{background:#fff8e9;color:#ad8742}
     .open .status-text{background:#edfbf7;color:#3d9c8a}
     .status-note{text-align:center;margin:26px auto 0;color:#6f858d;font-size:.82rem}
+    .commission-table{border:2px solid #d8f3f8;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 10px 25px rgba(65,145,165,.07)}
+    .commission-head,.commission-row{display:grid;grid-template-columns:90px 1fr 1fr;align-items:center}
+    .commission-head{background:#eefaff;color:#4d93a8;font-weight:900;letter-spacing:.04em}
+    .commission-head>div,.commission-row>div{padding:14px 12px;text-align:center}
+    .commission-head>div:nth-child(2),.commission-row>div:nth-child(2){border-right:2px solid #d8f3f8}
+    .commission-row{border-top:1px solid #e5f3f6}
+    .commission-row .month{font-weight:900;color:#4a92a8}
+    .status-pill{display:inline-block;min-width:92px;padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:900}
+    .closed-pill{background:#fff0f4;color:#c85e79}
+    .adjust-pill{background:#fff8e9;color:#ad8742}
+    .open-pill{background:#edfbf7;color:#3d9c8a}
+    .illustration-pill{background:#eefaff;color:#4d93a8}
+    .illustration-note{text-align:center;margin:8px auto 0;color:#6f858d;font-size:.82rem}
+
     .illustration-status{margin-top:34px;padding-top:30px;border-top:2px dashed #cceff6}
     .illustration-status .status-sign{margin-bottom:22px}
     .illustration-status-box{display:flex;align-items:center;justify-content:center;gap:20px;padding:22px 26px;background:#fff;border:2px solid #d8f3f8;border-radius:22px;box-shadow:0 10px 25px rgba(65,145,165,.07);color:#416f7e}
@@ -144,6 +158,7 @@
     .illustration-status-box strong{font-size:1.05rem;color:#3f8f80}
     .illustration-status-box p{margin:4px 0 0;font-size:.8rem;color:#6f858d}
     @media(max-width:850px){.illustration-status-box{display:block;text-align:center}.illustration-status-icon{margin:0 auto 12px}.illustration-status-box p{font-size:.78rem}}
+    @media(max-width:850px){.commission-head,.commission-row{grid-template-columns:58px 1fr 1fr}.commission-head>div,.commission-row>div{padding:11px 5px;font-size:.74rem}.status-pill{min-width:0;padding:5px 7px;font-size:.68rem}}
     @media(max-width:850px){
       .status-showcase{padding:35px 16px 24px}
       .status-scoops{grid-template-columns:repeat(2,1fr)}
@@ -202,57 +217,79 @@
       <div class="wrap">
         <div class="section-head"><h2>COMMISSION</h2></div>
         <div class="status-showcase">
-          <div class="status-sign">LIVE2D COMMISSION<small>受付状況</small></div>
-          <div class="status-scoops">
-            <article class="status-card closed" data-note="現在は受付を終了しています。">
-              <div class="month">10月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
-            </article>
-            <article class="status-card closed" data-note="現在は受付を終了しています。">
-              <div class="month">11月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
-            </article>
-            <article class="status-card closed" data-note="現在は受付を終了しています。">
-              <div class="month">12月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
-            </article>
-            <article class="status-card closed" data-note="現在は受付を終了しています。">
-              <div class="month">1月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
-            </article>
-            <article class="status-card closed" data-note="現在は受付を終了しています。">
-              <div class="month">2月</div><div class="status-scoop">×</div><div class="status-text">受付終了</div>
-            </article>
-            <article class="status-card adjust" data-note="現在お見積り・スケジュールを調整中です。">
-              <div class="month">3月</div><div class="status-scoop">△</div><div class="status-text">調整中</div>
-            </article>
-            <article class="status-card adjust" data-note="現在お見積り・スケジュールを調整中です。">
-              <div class="month">4月</div><div class="status-scoop">△</div><div class="status-text">調整中</div>
-            </article>
-            <article class="status-card adjust" data-note="現在お見積り・スケジュールを調整中です。">
-              <div class="month">5月</div><div class="status-scoop">△</div><div class="status-text">調整中</div>
-            </article>
-            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
-              <div class="month">6月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
-            </article>
-            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
-              <div class="month">7月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
-            </article>
-            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
-              <div class="month">8月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
-            </article>
-            <article class="status-card open" data-note="現在受付中です。お気軽にご相談ください。">
-              <div class="month">9月</div><div class="status-scoop">○</div><div class="status-text">受付中</div>
-            </article>
-          </div>
-          <p class="status-note">受付状況はスケジュールにより変動する場合があります。ご依頼を検討中の方はお気軽にご相談ください。</p>
+          <div class="status-sign">COMMISSION<small>受付状況</small></div>
 
-          <div class="illustration-status">
-            <div class="status-sign">ILLUSTRATION COMMISSION<small>受付状況</small></div>
-            <div class="illustration-status-box">
-              <div class="illustration-status-icon">○</div>
-              <div>
-                <strong>月1件限定で受付中</strong>
-                <p>イラストのご依頼は、1ヶ月につき1件限定で受付しております。<br>受付枠が埋まり次第、その月の受付を終了いたします。</p>
-              </div>
+          <div class="commission-table">
+            <div class="commission-head">
+              <div>月</div>
+              <div>LIVE2D COMMISSION</div>
+              <div>ILLUSTRATION COMMISSION</div>
+            </div>
+
+            <div class="commission-row">
+              <div class="month">10月</div>
+              <div><span class="status-pill closed-pill">受付終了</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">11月</div>
+              <div><span class="status-pill closed-pill">受付終了</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">12月</div>
+              <div><span class="status-pill closed-pill">受付終了</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">1月</div>
+              <div><span class="status-pill closed-pill">受付終了</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">2月</div>
+              <div><span class="status-pill closed-pill">受付終了</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">3月</div>
+              <div><span class="status-pill adjust-pill">調整中</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">4月</div>
+              <div><span class="status-pill adjust-pill">調整中</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">5月</div>
+              <div><span class="status-pill adjust-pill">調整中</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">6月</div>
+              <div><span class="status-pill open-pill">受付中</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">7月</div>
+              <div><span class="status-pill open-pill">受付中</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">8月</div>
+              <div><span class="status-pill open-pill">受付中</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
+            </div>
+            <div class="commission-row">
+              <div class="month">9月</div>
+              <div><span class="status-pill open-pill">受付中</span></div>
+              <div><span class="status-pill illustration-pill">月1件限定</span></div>
             </div>
           </div>
+
+          <p class="status-note">Live2Dの受付状況はスケジュールにより変動する場合があります。ご依頼を検討中の方はお気軽にご相談ください。</p>
+          <p class="illustration-note">イラストは月1件限定で受付しております。受付枠が埋まり次第、その月の受付を終了いたします。</p>
 
           <div class="price-inline">
             <div class="price-inline-title">料金の目安</div>
@@ -277,7 +314,7 @@
               </article>
             </div>
           </div>
-        </div>
+        </div>        </div>
       </div>
     </section>
 
