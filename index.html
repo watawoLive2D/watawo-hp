@@ -175,6 +175,7 @@
       .section-head{display:block}.section-head p{margin-top:10px}
       .work-grid{grid-template-columns:repeat(2,1fr)}
     }
+  .commission-row .status-text{margin-left:8px}.commission-row>div:nth-child(2),.commission-row>div:nth-child(3){display:flex;align-items:center;justify-content:center;gap:4px}@media(max-width:850px){.commission-row .status-text{display:none}}
   </style>
 </head>
 <body>
@@ -219,76 +220,11 @@
         <div class="status-showcase">
           <div class="status-sign">COMMISSION<small>受付状況</small></div>
 
-          <div class="commission-table">
-            <div class="commission-head">
-              <div>月</div>
-              <div>LIVE2D COMMISSION</div>
-              <div>ILLUSTRATION COMMISSION</div>
-            </div>
-
-            <div class="commission-row">
-              <div class="month">10月</div>
-              <div><span class="status-pill closed-pill">×</span></div>
-              <div><span class="status-pill closed-pill">×</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">11月</div>
-              <div><span class="status-pill closed-pill">×</span></div>
-              <div><span class="status-pill closed-pill">×</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">12月</div>
-              <div><span class="status-pill closed-pill">×</span></div>
-              <div><span class="status-pill open-pill">○</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">1月</div>
-              <div><span class="status-pill closed-pill">×</span></div>
-              <div><span class="status-pill closed-pill">×</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">2月</div>
-              <div><span class="status-pill closed-pill">×</span></div>
-              <div><span class="status-pill open-pill">○</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">3月</div>
-              <div><span class="status-pill closed-pill">×</span></div>
-              <div><span class="status-pill open-pill">○</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">4月</div>
-              <div><span class="status-pill adjust-pill">△</span></div>
-              <div><span class="status-pill open-pill">○</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">5月</div>
-              <div><span class="status-pill adjust-pill">△</span></div>
-              <div><span class="status-pill open-pill">○</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">6月</div>
-              <div><span class="status-pill closed-pill">×</span></div>
-              <div><span class="status-pill open-pill">○</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">7月</div>
-              <div><span class="status-pill open-pill">○</span></div>
-              <div><span class="status-pill open-pill">○</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">8月</div>
-              <div><span class="status-pill open-pill">○</span></div>
-              <div><span class="status-pill open-pill">○</span></div>
-            </div>
-            <div class="commission-row">
-              <div class="month">9月</div>
-              <div><span class="status-pill open-pill">○</span></div>
-              <div><span class="status-pill open-pill">○</span></div>
-            </div>
+          <div class="commission-table" id="commission-status-table" aria-live="polite">
+            <div class="commission-head"><div>月</div><div>LIVE2D COMMISSION</div><div>ILLUSTRATION COMMISSION</div></div>
+            <div class="commission-row"><div class="month">読み込み中</div><div>受付状況を確認しています</div><div>受付状況を確認しています</div></div>
           </div>
-
-          <p class="status-note">Live2Dの受付状況はスケジュールにより変動する場合があります。ご依頼を検討中の方はお気軽にご相談ください。</p>
+          <p class="status-note" id="commission-status-note">Live2Dの受付状況はスケジュールにより変動する場合があります。ご依頼を検討中の方はお気軽にご相談ください。</p>
           <p class="illustration-note">イラストは月1件限定で受付しております。受付枠が埋まり次第、その月の受付を終了いたします。</p>
 
           <div class="price-inline">
@@ -413,5 +349,15 @@
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+  const firebaseConfig = {apiKey:"AIzaSyAK4rrkJoqYF7KUF7CdCFCvozY8fQr1jvc",authDomain:"watawo-workroom.firebaseapp.com",projectId:"watawo-workroom",storageBucket:"watawo-workroom.firebasestorage.app",messagingSenderId:"807029881611",appId:"1:807029881611:web:ebd3d455179943f5cd400e"};
+  const labels={open:{symbol:"○",label:"受付中",cls:"open-pill"},adjust:{symbol:"△",label:"相談受付中",cls:"adjust-pill"},closed:{symbol:"×",label:"受付終了",cls:"closed-pill"}};
+  const fallback=[["10月","closed","closed"],["11月","closed","closed"],["12月","closed","open"],["1月","closed","closed"],["2月","closed","open"],["3月","closed","open"],["4月","adjust","open"],["5月","adjust","open"],["6月","closed","open"],["7月","open","open"],["8月","open","open"],["9月","open","open"]];
+  const escStatus=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  function drawStatus(months,note){const table=document.getElementById("commission-status-table");if(!table)return;const rows=months.map(m=>{const l=labels[m.live2d]||labels.closed,i=labels[m.illustration]||labels.closed;return '<div class="commission-row"><div class="month">'+escStatus(m.label)+'</div><div><span class="status-pill '+l.cls+'" title="'+l.label+'">'+l.symbol+'</span><span class="status-text">'+l.label+'</span></div><div><span class="status-pill '+i.cls+'" title="'+i.label+'">'+i.symbol+'</span><span class="status-text">'+i.label+'</span></div></div>';}).join("");table.innerHTML='<div class="commission-head"><div>月</div><div>LIVE2D COMMISSION</div><div>ILLUSTRATION COMMISSION</div></div>'+(rows||'<div class="commission-row"><div class="month">未設定</div><div>お問い合わせください</div><div>お問い合わせください</div></div>');if(note)document.getElementById("commission-status-note").textContent=note;}
+  try{const app=initializeApp(firebaseConfig,"public-reception-status");const db=getFirestore(app);const snap=await getDoc(doc(db,"publicSettings","receptionStatus"));if(snap.exists()&&Array.isArray(snap.data().months)&&snap.data().months.length)drawStatus(snap.data().months,snap.data().note||"");else drawStatus(fallback.map(([label,live2d,illustration])=>({label,live2d,illustration})),"Live2Dの受付状況はスケジュールにより変動する場合があります。ご依頼を検討中の方はお気軽にご相談ください。");}catch(e){console.error("受付状況の読み込みに失敗しました",e);drawStatus(fallback.map(([label,live2d,illustration])=>({label,live2d,illustration})),"Live2Dの受付状況はスケジュールにより変動する場合があります。ご依頼を検討中の方はお気軽にご相談ください。");}
+</script>
 </body>
 </html>
