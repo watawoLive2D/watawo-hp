@@ -176,6 +176,19 @@
       .work-grid{grid-template-columns:repeat(2,1fr)}
     }
   .commission-row .status-text{margin-left:8px}.commission-row>div:nth-child(2),.commission-row>div:nth-child(3){display:flex;align-items:center;justify-content:center;gap:4px}@media(max-width:850px){.commission-row .status-text{display:none}}
+  
+    /* Center the whole site and leave usable side gutters for decorative images */
+    main{width:min(1200px,100%);margin-inline:auto;overflow:hidden}
+    body>footer{width:min(1200px,100%);margin-inline:auto}
+    .hero{padding-left:clamp(24px,4vw,56px);padding-right:clamp(24px,4vw,56px)}
+    section{padding-left:clamp(22px,4vw,54px);padding-right:clamp(22px,4vw,54px)}
+    body{background:#dcecf3}
+    @media(max-width:850px){
+      main,body>footer{width:100%}
+      .hero{padding-left:22px;padding-right:22px}
+      section{padding-left:18px;padding-right:18px}
+    }
+
   </style>
 </head>
 <body>
