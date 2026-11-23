@@ -104,6 +104,9 @@
     .live2d-work{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 15px 40px rgba(60,70,80,.06);cursor:pointer;transition:transform .2s,box-shadow .2s}
     .live2d-work:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(60,70,80,.12)}
     .live2d-work img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .live2d-work.sold-out{position:relative}
+    .live2d-work.sold-out:after{content:"完売しました";position:absolute;left:50%;bottom:14px;transform:translateX(-50%);padding:7px 18px;border-radius:999px;background:rgba(46,69,90,.9);color:#fff;font-size:.85rem;font-weight:900;letter-spacing:.08em;white-space:nowrap;box-shadow:0 4px 14px rgba(30,50,60,.2);pointer-events:none}
+
     .live2d-work .work-info{display:none}
     .lightbox{position:fixed;z-index:100;inset:0;background:rgba(20,25,30,.86);display:none;align-items:center;justify-content:center;padding:30px}
     .lightbox.is-open{display:flex}
@@ -278,7 +281,7 @@
           <article class="live2d-work" data-gallery="assets/はろうぃんちゃん1.png"><img src="assets/はろうぃんちゃん1.png" alt="はろうぃんちゃん"></article>
           <article class="live2d-work" data-gallery="assets/ねり.png" data-title="ねり"><img src="assets/ねり.png" alt="ねり"></article>
           <article class="live2d-work" data-gallery="assets/わたを.png" data-title="わたを"><img src="assets/わたを.png" alt="わたを"></article>
-          <article class="live2d-work" data-gallery="assets/ししゅうちゃん.png" data-title="魂募集中"><img src="assets/ししゅうちゃん.png" alt="ししゅうちゃん"></article>
+          <article class="live2d-work sold-out" data-gallery="assets/ししゅうちゃん.png" data-title="完売しました"><img src="assets/ししゅうちゃん.png" alt="ししゅうちゃん"></article>
           <article class="live2d-work" data-gallery="assets/みやせさま.png" data-title="白群みやせ"><img src="assets/みやせさま.png" alt="白群みやせ"></article>
         </div>
       </div>
