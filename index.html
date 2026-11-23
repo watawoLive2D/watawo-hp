@@ -237,7 +237,11 @@
             <div class="commission-head"><div>月</div><div>モデル一括制作</div><div>パーツ分けイラストのみ</div></div>
             <div class="commission-row"><div class="month">読み込み中</div><div>受付状況を確認しています</div><div>受付状況を確認しています</div></div>
           </div>
-          <p class="status-note">新規ご依頼の受付は2027年8月まで休止しております。受付再開は2027年9月を予定しております。</p>
+          <div class="status-note">
+            <p>モデル一括制作：2027年6月・7月・8月は各月<strong>残り1件</strong>受付可能です。</p>
+            <p>パーツ分けイラストのみ：10月は受付中止、11月から受付中です。</p>
+            <p class="illustration-note">パーツ分けイラストのみをご希望の場合、クオリティを大切にした信頼できるモデラーさまをご紹介することも可能です。</p>
+          </div>
 
           <div class="price-inline">
             <div class="price-inline-title">料金の目安</div>
@@ -362,18 +366,17 @@
     });
   </script>
 <script>
-  const labels={open:{symbol:"○",label:"受付中",cls:"open-pill"},closed:{symbol:"×",label:"受付中止",cls:"closed-pill"}};
+  const labels={open:{symbol:"○",label:"受付中",cls:"open-pill"},closed:{symbol:"×",label:"受付中止",cls:"closed-pill"},adjust:{symbol:"△",label:"残り1件",cls:"adjust-pill"}};
   const months=[
-    ["10月","closed"],["11月","closed"],["12月","closed"],
-    ["1月","closed"],["2月","closed"],["3月","closed"],["4月","closed"],
-    ["5月","closed"],["6月","closed"],["7月","closed"],["8月","closed"]
+    ["10月","closed","closed"],["11月","closed","open"],["12月","closed","open"],
+    ["1月","closed","open"],["2月","closed","open"],["3月","closed","open"],["4月","closed","open"],
+    ["5月","closed","open"],["6月","adjust","open"],["7月","adjust","open"],["8月","adjust","open"]
   ];
   const table=document.getElementById("commission-status-table");
   if(table){
-    const rows=months.map(([month,status])=>{
-      const item=labels[status];
-      const cell='<span class="status-pill '+item.cls+'">'+item.symbol+'</span><span class="status-text">'+item.label+'</span>';
-      return '<div class="commission-row"><div class="month">'+month+'</div><div>'+cell+'</div><div>'+cell+'</div></div>';
+    const rows=months.map(([month,modelStatus,illustrationStatus])=>{
+      const makeCell=status=>{const item=labels[status];return '<span class="status-pill '+item.cls+'">'+item.symbol+'</span><span class="status-text">'+item.label+'</span>';};
+      return '<div class="commission-row"><div class="month">'+month+'</div><div>'+makeCell(modelStatus)+'</div><div>'+makeCell(illustrationStatus)+'</div></div>';
     }).join("");
     table.innerHTML='<div class="commission-head"><div>月</div><div>モデル一括制作</div><div>パーツ分けイラストのみ</div></div>'+rows;
   }
