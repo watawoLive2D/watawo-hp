@@ -237,6 +237,7 @@
             <div class="commission-head"><div>月</div><div>モデル一括制作</div><div>パーツ分けイラストのみ</div></div>
             <div class="commission-row"><div class="month">読み込み中</div><div>受付状況を確認しています</div><div>受付状況を確認しています</div></div>
           </div>
+          <p class="status-note">新規ご依頼の受付は2027年8月まで休止しております。受付再開は2027年9月を予定しております。</p>
 
           <div class="price-inline">
             <div class="price-inline-title">料金の目安</div>
@@ -363,9 +364,9 @@
 <script>
   const labels={open:{symbol:"○",label:"受付中",cls:"open-pill"},closed:{symbol:"×",label:"受付中止",cls:"closed-pill"}};
   const months=[
-    ["10月","closed"],["11月","closed"],
-    ["12月","open"],["1月","open"],["2月","open"],["3月","open"],
-    ["4月","open"],["5月","open"],["6月","open"],["7月","open"]
+    ["10月","closed"],["11月","closed"],["12月","closed"],
+    ["1月","closed"],["2月","closed"],["3月","closed"],["4月","closed"],
+    ["5月","closed"],["6月","closed"],["7月","closed"],["8月","closed"]
   ];
   const table=document.getElementById("commission-status-table");
   if(table){
