@@ -1,0 +1,9 @@
+# GitHub Linguist: classify the project as a website rather than HTML-only.
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+*.png linguist-generated=true
+*.jpg linguist-generated=true
+*.jpeg linguist-generated=true
+*.webp linguist-generated=true
+*.svg linguist-generated=true
