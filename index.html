@@ -146,6 +146,14 @@
     .adjust .status-text{background:#fff8e9;color:#ad8742}
     .open .status-text{background:#edfbf7;color:#3d9c8a}
     .status-note{text-align:center;margin:26px auto 0;color:#6f858d;font-size:.82rem}
+    .start-months{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:0 auto 16px}
+    .start-month{min-width:118px;padding:13px 18px 15px;border:2px solid #d8edf3;border-radius:18px;background:linear-gradient(180deg,#fff 0%,#f3fbff 100%);box-shadow:0 7px 18px rgba(65,145,165,.09);display:flex;flex-direction:column;align-items:center;gap:7px}
+    .start-month>strong{font-size:clamp(1.35rem,2.8vw,1.8rem);line-height:1.25;color:#357f96}
+    .start-status{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;font-size:1.8rem;font-weight:900;line-height:1}
+    .start-status.closed{background:#fff0f3;color:#d45d78;border:2px solid #f5c3cf}
+    .start-status.open{background:#e8faf4;color:#299b7f;border:2px solid #a9e5d3}
+    @media(max-width:480px){.start-months{gap:8px}.start-month{min-width:calc(33.333% - 6px);padding:11px 6px 13px}.start-status{width:40px;height:40px;font-size:1.55rem}}
+
     .status-note p:first-child strong{display:inline-block;font-size:clamp(1.45rem,3vw,2rem);line-height:1.3;color:#357f96;margin:0 3px;letter-spacing:.04em}
     .commission-table{border:2px solid #d8f3f8;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 10px 25px rgba(65,145,165,.07)}
     .commission-head,.commission-row{display:grid;grid-template-columns:90px 1fr 1fr;align-items:center}
@@ -257,7 +265,7 @@
           <div class="status-sign">COMMISSION<small>着手時期</small></div>
 
           <div class="status-note">
-            <p><strong>11月</strong>　×　　<strong>12月</strong>　×　　<strong>1月</strong>　○</p>
+            <div class="start-months" aria-label="着手時期"><div class="start-month"><strong>11月</strong><span class="start-status closed">×</span></div><div class="start-month"><strong>12月</strong><span class="start-status closed">×</span></div><div class="start-month"><strong>1月</strong><span class="start-status open">○</span></div></div>
             <p>着手時期は目安です。ご希望の内容や制作状況により調整いたします。</p>
             <p class="illustration-note">パーツ分けイラストのみをご希望の場合、クオリティを大切にした信頼できるモデラーさまをご紹介することも可能です。</p>
           </div>
