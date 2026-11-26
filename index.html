@@ -253,15 +253,11 @@
       <div class="wrap">
         <div class="section-head"><h2>COMMISSION</h2></div>
         <div class="status-showcase">
-          <div class="status-sign">COMMISSION<small>受付状況</small></div>
+          <div class="status-sign">COMMISSION<small>着手時期</small></div>
 
-          <div class="commission-table" id="commission-status-table" aria-live="polite">
-            <div class="commission-head"><div>月</div><div>モデル一括制作</div><div>パーツ分けイラストのみ</div></div>
-            <div class="commission-row"><div class="month">読み込み中</div><div>受付状況を確認しています</div><div>受付状況を確認しています</div></div>
-          </div>
           <div class="status-note">
-            <p>モデル一括制作：2027年6月・7月・8月は各月<strong>残り1件</strong>受付可能です。</p>
-            <p>パーツ分けイラストのみ：10月は受付中止、11月から受付中です。</p>
+            <p><strong>11月</strong>　×　　<strong>12月</strong>　×　　<strong>1月</strong>　○</p>
+            <p>着手時期は目安です。ご希望の内容や制作状況により調整いたします。</p>
             <p class="illustration-note">パーツ分けイラストのみをご希望の場合、クオリティを大切にした信頼できるモデラーさまをご紹介することも可能です。</p>
           </div>
 
@@ -414,21 +410,5 @@
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
-<script>
-  const labels={open:{symbol:"○",label:"受付中",cls:"open-pill"},closed:{symbol:"×",label:"受付中止",cls:"closed-pill"},adjust:{symbol:"△",label:"残り1件",cls:"adjust-pill"}};
-  const months=[
-    ["10月","closed","closed"],["11月","closed","open"],["12月","closed","open"],
-    ["1月","closed","open"],["2月","closed","open"],["3月","closed","open"],["4月","closed","open"],
-    ["5月","closed","open"],["6月","adjust","open"],["7月","adjust","open"],["8月","adjust","open"]
-  ];
-  const table=document.getElementById("commission-status-table");
-  if(table){
-    const rows=months.map(([month,modelStatus,illustrationStatus])=>{
-      const makeCell=status=>{const item=labels[status];return '<span class="status-pill '+item.cls+'">'+item.symbol+'</span><span class="status-text">'+item.label+'</span>';};
-      return '<div class="commission-row"><div class="month">'+month+'</div><div>'+makeCell(modelStatus)+'</div><div>'+makeCell(illustrationStatus)+'</div></div>';
-    }).join("");
-    table.innerHTML='<div class="commission-head"><div>月</div><div>モデル一括制作</div><div>パーツ分けイラストのみ</div></div>'+rows;
-  }
-</script>
 </body>
 </html>
