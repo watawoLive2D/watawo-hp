@@ -213,6 +213,11 @@
 
     /* Live2D price details */
     .price-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+    .price-installment{margin:18px auto 10px;padding:18px 22px;max-width:900px;text-align:center;background:linear-gradient(135deg,#eefaff,#f5f1ff);border:2px solid #c9eaf2;border-radius:18px;color:#357f96;font-size:clamp(1.35rem,3.2vw,2rem);font-weight:900;line-height:1.45;box-shadow:0 8px 20px rgba(65,145,165,.08)}
+    .price-installment small{display:block;margin-top:5px;font-size:.78rem;font-weight:600;color:#607b85}
+    .price-payment-notes{margin:10px auto 24px;text-align:center;color:#607b85;font-size:.86rem;line-height:1.9}
+    .price-payment-notes p{margin:3px 0}
+    @media(max-width:600px){.price-installment{padding:15px 12px}.price-payment-notes{font-size:.78rem}}
     .price-subtitle{margin:18px 0 10px;color:#4d93a8;font-size:.95rem}
     .included-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 18px;padding-left:1.2em;margin:0;color:#607b85;font-size:.82rem;line-height:1.65}
     .included-list li::marker{color:#80c9d9}
@@ -275,6 +280,11 @@
 
           <div class="price-inline">
             <div class="price-inline-title">料金の目安</div>
+            <div class="price-installment">最大10回まで分割支払い可能<small>利息や特別な手数料はかかりません</small></div>
+            <div class="price-payment-notes">
+              <p>着手時期はスケジュールにより変動します。</p>
+              <p>納品は、ご依頼料金をすべてお支払いいただいてからとなります。</p>
+            </div>
             <div class="price-grid">
               <article class="price-card live2d-price-card"><span class="num">LIVE2D</span><h3>モデル一括制作 基本料金</h3>
                 <div class="price-list">
