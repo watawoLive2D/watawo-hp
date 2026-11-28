@@ -76,8 +76,13 @@
     .price-divider{height:1px;background:var(--line);margin:13px 0}
     .price-card hr{border:0;border-top:1px solid var(--line);margin:12px 0}
     @media(max-width:850px){.price-card p{white-space:normal}.price-row{grid-template-columns:1fr auto}.price-row span{white-space:normal}.price-grid{grid-template-columns:1fr}}
-    .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-    .about-box{background:white;border-radius:30px;padding:40px;border:1px solid var(--line)}
+    .about{display:grid;grid-template-columns:minmax(0,1fr);align-items:center}
+    .about-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.85fr);gap:44px;align-items:center;max-width:1050px;margin:0 auto}
+    .about-copy{min-width:0}
+    .about-copy h2{line-height:1.5;margin:12px 0 18px;white-space:normal}
+    .about-copy p{margin:0;line-height:2;white-space:normal;overflow-wrap:anywhere}
+    .about-image{width:100%;height:auto;display:block;object-fit:contain;border-radius:20px}
+    @media(max-width:700px){.about-inner{grid-template-columns:1fr;gap:24px}.about-image{max-width:460px;margin:0 auto}.about-copy h2{font-size:clamp(1.6rem,6vw,2.2rem)}}
     .contact-method{margin-top:18px;font-weight:700}
     .contact-links{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
     .contact{background:#2e455a;color:#fffdf3;text-align:center}
@@ -398,7 +403,14 @@ div>
 
     <section id="about">
       <div class="wrap about">
-        <div><div class="eyebrow">ABOUT WATAWO</div><h2>丁寧に、<br>かわいく、楽しく。</h2><p>フリーランスのイラストレーター・Live2Dクリエイターとして活動しています。<br>Live2D制作歴3年。<br>CLIP STUDIO PAINTを使用し、イラストからLive2Dモデリングまで制作しています。</p></div>
+        <div class="about-inner">
+          <div class="about-copy">
+            <div class="eyebrow">ABOUT WATAWO</div>
+            <h2>丁寧に、かわいく、楽しく。</h2>
+            <p>フリーランスのイラストレーター・Live2Dクリエイターとして活動しています。Live2D制作歴3年。CLIP STUDIO PAINTを使用し、イラストからLive2Dモデリングまで制作しています。</p>
+          </div>
+          <img class="about-image" src="4147823-2.png" alt="わたをのイラスト">
+        </div>
       </div>
     </section>
 
