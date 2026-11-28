@@ -212,8 +212,10 @@
 
 
     /* Live2D price details */
-    .price-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
-    .price-grid>.price-card:nth-child(3){grid-column:1 / -1;width:calc(50% - 12px);justify-self:center}
+    .price-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+    .price-grid>.price-card:nth-child(1){grid-column:1;grid-row:1}
+    .price-grid>.price-card:nth-child(2){grid-column:1;grid-row:2}
+    .price-grid>.price-card:nth-child(3){grid-column:2;grid-row:1 / span 2;width:100%;align-self:stretch}
     .illustration-price-section{margin-top:26px}
     .illustration-price-section .illustration-price-card{width:100%;max-width:760px;margin:0 auto}
     .illustration-price-section .price-list{max-width:620px;margin:0 auto}
@@ -237,7 +239,7 @@
     .illustration-price-card h3{color:#87583f}
     .illustration-price-card .price-row{color:#805d4b}
     .illustration-price-card .price-row strong{color:#b66d45}
-    @media(max-width:850px){.price-grid{grid-template-columns:1fr}.price-grid>.price-card:nth-child(3){grid-column:auto;width:100%}.included-list{grid-template-columns:1fr}}
+    @media(max-width:850px){.price-grid{grid-template-columns:1fr}.price-grid>.price-card:nth-child(1),.price-grid>.price-card:nth-child(2),.price-grid>.price-card:nth-child(3){grid-column:1;grid-row:auto;width:100%}.included-list{grid-template-columns:1fr}}
 
   </style>
 </head>
